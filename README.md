@@ -1,36 +1,47 @@
-# Galaxy Smart Guided Troubleshooting Engine
+# =============================================================================
+# Galaxy Smart Guided Troubleshooting Engine - Dependency Reference
+# =============================================================================
+# NOTE: This is a Node.js + TypeScript project, NOT a Python project.
+# The file pip reads (requirements.txt) does not apply here. The real, installable
+# dependency manifest is `package.json`; install everything with:
+#
+#     npm install
+#
+# This file is a human-readable reference of what `npm install` pulls in.
+# No Python packages are required.
+# =============================================================================
 
-Samsung Electronics Guided Self-Repair and Triage Engine for Galaxy One UI Devices.
+# ---- Runtime ----------------------------------------------------------------
+# Node.js >= 20 (LTS recommended; 22 is what @types/node targets)
+# npm >= 10
 
-## Two Views Architecture
+# ---- Production dependencies (npm) ------------------------------------------
+@google/genai@^2.4.0          # Gemini API SDK (query understanding + plan extraction; optional at runtime)
+express@^4.21.2               # REST API server (/v1/troubleshoot, /health, /api/*)
+dotenv@^17.2.3                # Loads GEMINI_API_KEY etc. from .env
+react@^19.0.1                 # Frontend UI
+react-dom@^19.0.1             # React DOM renderer
+vite@^8.3.0                   # Dev server (middleware mode) + production bundler
+@vitejs/plugin-react@^6.1.1   # React support for Vite
+@tailwindcss/vite@^4.3.3      # Tailwind CSS v4 Vite plugin
+lucide-react@^0.546.0         # Icon set
+motion@^12.23.24              # Animations
 
-1. **Customer View (Default at `/`)**:
-   - Clean, friendly, mobile-first Samsung Galaxy support experience.
-   - Designed for real phone owners with plain-language diagnostics, voice microphone input, screenshot diagnosis, numbered step checklists, "Open in Settings", "Send to my phone" QR codes, safety hazard warnings, and "Did this fix it?" feedback.
-   - Completely free of technical jargon, latencies, model names, and raw `bixby://` URIs.
+# ---- Dev dependencies (npm) -------------------------------------------------
+typescript@^7.0.2             # Type checking (npm run lint -> tsc --noEmit)
+tsx@^4.21.0                   # Runs server.ts directly (dev + start scripts)
+tailwindcss@^4.3.3            # Tailwind CSS core
+autoprefixer@^10.4.21         # PostCSS vendor prefixes
+esbuild@^0.25.0               # Bundler used by tooling
+@types/node@^22.14.0          # Node typings
+@types/express@^4.17.21       # Express typings
+@types/react@^19.3.0          # React typings
+@types/react-dom@^19.3.0      # React DOM typings
 
-2. **Developer Console (`?console=1` or `Ctrl+Shift+D`)**:
-   - Built for hackathon judges and Samsung DX engineers.
-   - Access via URL parameter `?console=1`, keyboard shortcut `Ctrl+Shift+D`, or the "Developer console" link in the footer.
-   - Contains all 6 technical tabs:
-     - **Troubleshoot Workbench**: Full execution trace, stage timings, raw JSON response, AST validation, and Galaxy simulator.
-     - **Paraphrase & Cache Lab**: Benchmarking across 10 linguistic registers verifying >=80% hit rate and <300ms latency.
-     - **Deeplink Catalog**: Interactive explorer of 36 masked Galaxy settings URIs across 9 domains with BM25 retrieval.
-     - **Support Team Dashboard (Analytics)**: Real-time telemetry, cache hit rates, average latency, and dollar savings vs. cloud AI.
-     - **Evaluation (metrics.md)**: Automated gate verification (schema conformity, zero URL leaks, and baseline comparison table).
-     - **API & cURL Sandbox**: Interactive REST API documentation and cURL testing sandbox.
-
-## Automated Evaluation & Backend Endpoints
-
-All backend endpoints are preserved and fully functional for automated test suites:
-
-- `GET /health`: Health status, cache initialization, and catalog size.
-- `POST /v1/troubleshoot`: Core pipeline processing natural-language complaints into validated One UI plans.
-- `GET /api/metrics`: Raw markdown report adhering to Appendix C (`metrics.md`).
-- `GET /api/benchmark`: JSON summary of system benchmark gates and architectural ablation.
-- `POST /api/benchmark/run`: Re-runs the automated evaluation suite against reference scenarios.
-- `GET /api/catalog`: Complete indexed Galaxy Settings deeplink catalog.
-- `GET /api/cache/stats`: Fast-path semantic cache hit/miss and P95 latency statistics.
-- `POST /api/cache/clear`: Resets and pre-warms semantic cache.
-- `POST /api/feedback` & `POST /v1/feedback`: "Did this fix it?" user feedback loop recording.
-- `GET /api/analytics` & `GET /v1/analytics`: Real-time operational support team analytics.
+# ---- Environment variables (see .env.example) -------------------------------
+# GEMINI_API_KEY   (optional) Enables Gemini-powered understanding/extraction.
+#                  Without it the engine runs fully offline on rule-based logic.
+# GEMINI_MODEL     (optional) Overrides the default model name.
+# PORT             (optional) Server port, default 3000.
+# NODE_ENV         (optional) Set to "production" to serve the built dist/ folder.
+# APP_URL          (optional) Hosted URL (injected automatically on AI Studio).
