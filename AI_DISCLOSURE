@@ -1,0 +1,63 @@
+# AI Disclosure
+
+**Project:** Galaxy Smart Guided Troubleshooting Engine
+**Team name: Byte4ce**
+**Event:** Samsung PRISM Gen AI Hackathon, Theme 02
+**Repository tag:** `PRISM_GENAI_HACKATHON_Y2026`
+
+## Design principle: AI proposes, code decides
+
+This project uses generative AI where language understanding is needed, and uses deterministic code wherever correctness and safety matter. A language model is never allowed to decide what a user is told to tap.
+
+## 1. Where AI is used (runtime)
+
+The app uses **Google Gemini** via `@google/genai`. It is **optional**: with no API key or an exhausted quota, the app falls back automatically to rule-based logic.
+
+| Stage | What Gemini does | Offline fallback |
+|---|---|---|
+| Query understanding | Detects language, translates to canonical English, classifies the domain, flags vague input and drafts clarifying questions, flags injection attempts, estimates confidence | Script detection and keyword rules |
+| Screenshot analysis | Summarizes an optional uploaded screenshot | Generic placeholder |
+| Plan drafting | Drafts a structured plan (goal, actions, steps) grounded in supplied SIIS text or built-in One UI knowledge | Builds the plan directly from the same grounded text |
+
+Default model: `gemini-3.8-flash` (overridable with `GEMINI_MODEL`).
+
+## 2. Where AI is deliberately not used
+
+These parts are plain code with no LLM, and they are what makes the output trustworthy:
+
+- **Deeplink selection:** BM25 retrieval over a fixed catalog of 36 masked deeplinks. The model cannot invent or pick a URI.
+- **Output validation:** URL and markdown-link scrubbing, exact goal/title/description syntax, action ordering (auto, then manual, then critical), and a catalog allow-list check.
+- **Confidence and escalation:** computed from understanding confidence and catalog match quality. Below 0.65, a human-escalation note is attached.
+- **Cache safety:** only plans with confidence of at least 0.85 are cached, which prevents cache poisoning.
+- **First-line injection defense:** regex checks run before any model call.
+- **Benchmarking:** an evaluation harness checks schema validity, URL leaks and latency.
+
+## 3. Our contribution
+
+[**TEAM: Byte4ce**]
+- We designed the pipeline architecture and the split between AI and deterministic stages.
+- We chose the validation rules, the 0.65 escalation threshold and the 0.85 cache-write threshold.
+- We built and curated the deeplink catalog and test queries. 
+- We tested many scenarios, reviewed all generated code, and fixed.
+
+## 4. Tools used to build the project
+
+- Google AI Studio and Gemini for AI-assisted code generation. 
+- Claude (Anthropic) helped draft the README and this document from the source code; the team reviewed them.
+
+## 5. Data and privacy
+
+- With a Gemini key configured, complaint text, optional screenshots and grounding text are sent to the Gemini API. Without a key, nothing leaves the server.
+- No database and no user accounts. The cache and analytics are in memory and reset on restart.
+- The "Send to my phone" QR uses the public `api.qrserver.com` service, which receives the deeplink string.
+- Data files (`deeplinks.json`, `siis_responses.json`, `queries.json`, `samples.json`) are static. [**TEAM: state their source, e.g. provided by the organizers or authored by the team.**]
+
+## 6. Known limitations
+
+- Gemini output can be wrong, which is why every plan passes through the validator.
+- Offline understanding covers only a small set of English, Hindi, Kannada, Tamil and Hinglish phrases.
+- Deeplinks are masked demo URIs, not yet verified on physical Galaxy devices.
+- Injection detection is regex-based and not exhaustive.
+- Suggestions are informational. For hardware faults or safety concerns, contact Samsung support.
+
+The team reviewed the AI-assisted code and content and is responsible for the final submission.
