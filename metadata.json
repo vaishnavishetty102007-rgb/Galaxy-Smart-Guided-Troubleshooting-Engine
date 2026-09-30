@@ -1,0 +1,6 @@
+{
+  "name": "Galaxy Smart Guided Troubleshooting Engine",
+  "description": "Automated engine transforming unstructured Galaxy device complaints into validated, deeplinked one-tap troubleshooting plans with sub-300ms fast-path semantic caching.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

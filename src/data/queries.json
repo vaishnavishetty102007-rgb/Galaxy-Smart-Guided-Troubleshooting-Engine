@@ -1,0 +1,122 @@
+[
+  {
+    "id": "query_display_swipe_gesture",
+    "domain": "Display",
+    "canonical": "The mobile phone swipe navigation moves up or down instead of left or right after downloading an app",
+    "short_query": "phone swipe gestures wrong direction after app install",
+    "expected_title": "Swipe navigation settings",
+    "expected_category_order": ["auto"],
+    "query_variations": [
+      "Ever since I installed a new app, swiping on my phone scrolls up and down instead of going left or right.",
+      "Why does my phone swipe vertically when I try to swipe sideways after downloading an app?",
+      "phone swipe gestures wrong direction after app install",
+      "I downloaded an application yesterday and now the swipe navigation on my Galaxy moves up or down when it shouldn't",
+      "Screen navigation gestures are misbehaving after an app download; horizontal swipes register as vertical",
+      "My phone's gesture navigation got messed up by a new app and swipes go the wrong way.",
+      "what should I do when swiping left or right on my phone scrolls the screen up and down instead?",
+      "Swipe navigation broken after installing app.",
+      "This is so annoying - I can't swipe sideways anymore since installing that app, everything just scrolls vertically!",
+      "Navigation swipes on my Samsung phone respond in the wrong axis after a recent app installation."
+    ]
+  },
+  {
+    "id": "query_battery_fast_drain",
+    "domain": "Battery",
+    "canonical": "Screen flickers and the battery dies fast",
+    "short_query": "battery dying quickly and display flickering",
+    "expected_title": "Battery fast drain",
+    "expected_category_order": ["auto", "auto", "critical"],
+    "query_variations": [
+      "My Galaxy screen flickers and the battery dies very quickly throughout the day.",
+      "Why does my screen flicker while my battery percentage drains in just a few hours?",
+      "screen flicker and fast battery drain",
+      "Battery dropping rapidly and the display keeps flickering intermittently.",
+      "Screen stuttering with severe battery depletion issue on Samsung Galaxy",
+      "Ugh my phone battery is draining like crazy and the display is flashing weirdly!",
+      "phone battery runs out too fast and screen brightness flickers",
+      "Screen flickrs battery dies fast samsung",
+      "Rapid power loss accompanied by screen flicker on Galaxy phone.",
+      "Phone power drains 50% in one hour and screen flickers uncontrollably."
+    ]
+  },
+  {
+    "id": "query_perf_slow_update",
+    "domain": "Performance",
+    "canonical": "My phone got slow after the update",
+    "short_query": "phone lagging and slow after recent software update",
+    "expected_title": "Device performance lag",
+    "expected_category_order": ["auto", "auto", "critical"],
+    "query_variations": [
+      "After installing the latest software update, my Galaxy phone has become noticeably sluggish and slow.",
+      "Why is my Samsung phone lagging so much right after the recent system update?",
+      "phone slow after software update",
+      "Ever since updating my phone yesterday, opening apps takes forever and navigation stutters.",
+      "System performance degradation observed immediately subsequent to firmware update installation.",
+      "My phone is running super slow after updating One UI, it's so frustrating!",
+      "galaxy phone lagging stuttering slow post update",
+      "My phne got so sloow after updte pls help",
+      "Sluggish UI response and heavy app stutter following system upgrade.",
+      "How do I speed up my Samsung Galaxy that became slow after the latest update?"
+    ]
+  },
+  {
+    "id": "query_cam_blurry_focus",
+    "domain": "Camera",
+    "canonical": "Camera takes blurry photos and struggles to focus on moving subjects",
+    "short_query": "camera photos blurry focus hunting",
+    "expected_title": "Camera focus blur",
+    "expected_category_order": ["auto", "manual", "critical"],
+    "query_variations": [
+      "My Galaxy camera won't focus properly and all the pictures turn out blurry when things move.",
+      "Why does my phone camera take blurry pictures and keep hunting for focus?",
+      "camera blurry focus issues samsung",
+      "Photos come out fuzzy and out of focus whenever I take snapshots of people or pets.",
+      "Camera viewfinder experiences continuous autofocus search resulting in unsharp images.",
+      "Every single photo is ruined and blurry because the camera won't lock focus!",
+      "camera focus hunting blurry pictures galaxy",
+      "Camra blury cant focus on anythin",
+      "Inability of camera module to achieve sharp focus on dynamic subjects.",
+      "How to fix blurry camera autofocus on Samsung Galaxy phone?"
+    ]
+  },
+  {
+    "id": "query_charging_slow",
+    "domain": "Battery",
+    "canonical": "Phone takes over 4 hours to charge and fast charging stopped working",
+    "short_query": "fast charging not working slow charge",
+    "expected_title": "Charging speed issues",
+    "expected_category_order": ["auto", "manual", "critical"],
+    "query_variations": [
+      "My Samsung Galaxy is taking several hours to reach full charge and fast charging isn't engaging.",
+      "Why did my phone stop super fast charging and now takes four hours?",
+      "slow charging fast charge not working",
+      "Plugged in original charger but it says cable charging instead of fast charging.",
+      "Discontinuation of rapid charging protocol with extended recharge durations.",
+      "Why takes 5 hours to charge my phone now, fast charging is broken!",
+      "fast charge stopped working galaxy slow charge",
+      "Phone chargin so slow fast charge gone",
+      "Failure of fast charging initiation leading to prolonged charging cycles.",
+      "Galaxy phone charging extremely slowly with standard charging speed only."
+    ]
+  },
+  {
+    "id": "query_touch_unresponsive",
+    "domain": "Display",
+    "canonical": "Touch screen is unresponsive and misses taps after putting on a glass screen protector",
+    "short_query": "touch screen unresponsive screen protector",
+    "expected_title": "Touch sensitivity issues",
+    "expected_category_order": ["auto", "manual"],
+    "query_variations": [
+      "Since applying a tempered glass protector, my touch screen frequently misses taps and gestures.",
+      "Why is my screen not responding properly to my finger touches after adding a screen guard?",
+      "touch sensitivity screen protector unresponsive",
+      "I have to tap very hard on the screen now because my new screen protector made it unresponsive.",
+      "Attenuated capacitive touch responsiveness following installation of protective glass barrier.",
+      "My screen is barely registering my touches after putting this protector on, it's driving me crazy!",
+      "galaxy touch screen insensitive missed taps",
+      "Screen touch not workin well with protector",
+      "Reduced touch register accuracy and input lag with protective film applied.",
+      "How to make Galaxy touch screen more sensitive with tempered glass?"
+    ]
+  }
+]

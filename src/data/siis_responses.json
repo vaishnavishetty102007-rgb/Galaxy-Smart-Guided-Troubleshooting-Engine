@@ -1,0 +1,13 @@
+{
+  "query_display_swipe_gesture": "Navigate to and open Settings. Tap on Display. Tap on Navigation bar. Select your preferred navigation type between Buttons and Swipe gestures. Optionally toggle on Gesture hint to display guidance lines at the bottom of the screen.",
+  
+  "query_battery_fast_drain": "Navigate to Settings. Tap Display. Tap Motion smoothness. Select Standard (60Hz) to save battery power. Next, return to Settings, tap Battery and device care. Tap Battery. Tap Background usage limits. Turn on Put unused apps to sleep. Tap Deep sleeping apps to add high-drain background apps. If battery drain continues at an abnormal rate, restart device in Safe mode to isolate rogue third-party background applications.",
+  
+  "query_perf_slow_update": "Navigate to Settings. Tap Battery and device care. Tap Memory. Tap Clean now to free up occupied background RAM. Next, tap RAM Plus and ensure sufficient virtual memory is allocated. Return to Settings, tap Display, and ensure Motion smoothness is optimized. If sluggishness persists following the firmware update, tap General management, tap Reset, and restart the device to reload system caches cleanly.",
+  
+  "query_cam_blurry_focus": "Open Camera app. Tap Camera Settings icon located in the upper left corner. Turn off Tracking auto-focus if camera continuously hunts for focus on static subjects. Toggle Scene optimizer on to enhance object recognition. Inspect camera lens glass exterior and gently wipe clean with a dry microfiber cloth to remove smudges. If blurry shots continue, scroll down in Camera Settings and tap Reset settings to restore factory optical defaults.",
+  
+  "query_charging_slow": "Navigate to Settings. Tap Battery and device care. Tap Battery. Tap More battery settings. Ensure Fast charging and Fast wireless charging toggles are turned on. Inspect the USB-C charging port on the device for lint or compacted debris and gently clean with a wooden toothpick or soft brush. If charging speed remains slow, inspect cable and power adapter.",
+  
+  "query_touch_unresponsive": "Navigate to and open Settings. Tap Display. Scroll down and toggle on Touch sensitivity to increase the sensitivity of the screen for use with screen protectors. Ensure the protective glass or film has no air bubbles, dust, or moisture trapped underneath."
+}

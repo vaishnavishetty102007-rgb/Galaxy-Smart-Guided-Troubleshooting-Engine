@@ -1,0 +1,443 @@
+[
+  {
+    "id": "sample_swipe_navigation",
+    "query": "The mobile phone swipe navigation moves up or down instead of left or right after downloading an app",
+    "query_variations": [
+      "Ever since I installed a new app, swiping on my phone scrolls up and down instead of going left or right.",
+      "Why does my phone swipe vertically when I try to swipe sideways after downloading an app?",
+      "phone swipe gestures wrong direction after app install",
+      "I downloaded an application yesterday and now the swipe navigation on my Galaxy moves up or down when it shouldn't",
+      "Screen navigation gestures are misbehaving after an app download; horizontal swipes register as vertical",
+      "My phone's gesture navigation got messed up by a new app and swipes go the wrong way.",
+      "what should I do when swiping left or right on my phone scrolls the screen up and down instead?",
+      "Swipe navigation broken after installing app.",
+      "This is so annoying - I can't swipe sideways anymore since installing that app, everything just scrolls vertically!",
+      "Navigation swipes on my Samsung phone respond in the wrong axis after a recent app installation."
+    ],
+    "response": {
+      "contexts": [
+        {
+          "goal": "Follow these steps to perform this Swipe Navigation Troubleshooting",
+          "title": "Swipe navigation settings",
+          "score": 0.93,
+          "actions": [
+            {
+              "actionName": "Configure Navigation Bar Settings",
+              "description": "It will let you choose navigation type",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap on Display.",
+                    "Tap on Navigation bar.",
+                    "Select your preferred navigation type between Buttons and Swipe gestures.",
+                    "Optionally toggle on Gesture hint to display guidance lines at the bottom of the screen."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/navigation_bar",
+                    "description": "Open navigation bar settings under Display",
+                    "message": "choose navigation type in Display settings"
+                  },
+                  "validationDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/navigation_bar",
+                    "key": "navigation_mode",
+                    "resultType": "str",
+                    "condition": "equal",
+                    "value": "gestures"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "latency_ms": 142,
+      "cache_hit": true,
+      "model": "gemini-3.8-flash",
+      "cost_usd": 0.0
+    }
+  },
+  {
+    "id": "sample_battery_flicker",
+    "query": "Screen flickers and the battery dies fast",
+    "query_variations": [
+      "My Galaxy screen flickers and the battery dies very quickly throughout the day.",
+      "Why does my screen flicker while my battery percentage drains in just a few hours?",
+      "screen flicker and fast battery drain",
+      "Battery dropping rapidly and the display keeps flickering intermittently.",
+      "Screen stuttering with severe battery depletion issue on Samsung Galaxy",
+      "Ugh my phone battery is draining like crazy and the display is flashing weirdly!",
+      "phone battery runs out too fast and screen brightness flickers",
+      "Screen flickrs battery dies fast samsung",
+      "Rapid power loss accompanied by screen flicker on Galaxy phone.",
+      "Phone power drains 50% in one hour and screen flickers uncontrollably."
+    ],
+    "response": {
+      "contexts": [
+        {
+          "goal": "Follow these steps to perform this Battery Fast Drain Troubleshooting",
+          "title": "Battery fast drain",
+          "score": 0.96,
+          "actions": [
+            {
+              "actionName": "Adjust Motion Smoothness Rate",
+              "description": "It will reduce screen refresh rate",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap on Display.",
+                    "Tap on Motion smoothness.",
+                    "Select Standard 60Hz to conserve battery power and stabilize display output."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/motion_smoothness",
+                    "description": "Open motion smoothness screen under Display",
+                    "message": "adjust screen refresh rate adaptive or standard"
+                  },
+                  "validationDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/motion_smoothness",
+                    "key": "refresh_rate_mode",
+                    "resultType": "str",
+                    "condition": "equal",
+                    "value": "standard"
+                  }
+                }
+              ]
+            },
+            {
+              "actionName": "Configure Background App Limits",
+              "description": "It will put unused apps asleep",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap on Battery and device care.",
+                    "Tap on Battery.",
+                    "Tap on Background usage limits.",
+                    "Toggle on Put unused apps to sleep.",
+                    "Tap Deep sleeping apps to add high battery drain apps."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.samsung.android.lool/background_usage_limits",
+                    "description": "Open background usage limits in Battery care",
+                    "message": "put unused battery heavy apps to sleep"
+                  },
+                  "validationDeeplink": {
+                    "deeplink": "bixby://masked/act/com.samsung.android.lool/background_usage_limits",
+                    "key": "auto_sleep_unused_apps",
+                    "resultType": "boolean",
+                    "condition": "equal",
+                    "value": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "actionName": "Restart In Diagnostic Safe Mode",
+              "description": "It will isolate harmful third party apps",
+              "category": "critical",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Swipe down from the top of the screen to reveal Quick settings.",
+                    "Tap the Power icon in the top right corner.",
+                    "Touch and hold the Power off icon until the Safe mode icon appears.",
+                    "Tap Safe mode to restart your device without third-party apps."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/safe_mode_reboot",
+                    "description": "Open safe mode diagnostic restart dialog",
+                    "message": "boot phone into safe mode environment"
+                  },
+                  "validationDeeplink": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "latency_ms": 188,
+      "cache_hit": true,
+      "model": "gemini-3.8-flash",
+      "cost_usd": 0.0
+    }
+  },
+  {
+    "id": "sample_camera_blur",
+    "query": "Camera takes blurry photos and struggles to focus on moving subjects",
+    "query_variations": [
+      "My Galaxy camera won't focus properly and all the pictures turn out blurry when things move.",
+      "Why does my phone camera take blurry pictures and keep hunting for focus?",
+      "camera blurry focus issues samsung",
+      "Photos come out fuzzy and out of focus whenever I take snapshots of people or pets.",
+      "Camera viewfinder experiences continuous autofocus search resulting in unsharp images.",
+      "Every single photo is ruined and blurry because the camera won't lock focus!",
+      "camera focus hunting blurry pictures galaxy",
+      "Camra blury cant focus on anythin",
+      "Inability of camera module to achieve sharp focus on dynamic subjects.",
+      "How to fix blurry camera autofocus on Samsung Galaxy phone?"
+    ],
+    "response": {
+      "contexts": [
+        {
+          "goal": "Follow these steps to perform this Camera Focus Blur Troubleshooting",
+          "title": "Camera focus blur",
+          "score": 0.94,
+          "actions": [
+            {
+              "actionName": "Configure Camera Focus Settings",
+              "description": "It will disable unstable autofocus tracking",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Open the Camera app.",
+                    "Tap the Camera Settings icon in the top left corner.",
+                    "Turn off Tracking auto-focus if camera lens struggles to focus.",
+                    "Toggle on Scene optimizer to improve automatic subject sharpness."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.sec.android.app.camera/tracking_af",
+                    "description": "Open tracking autofocus toggle menu",
+                    "message": "toggle tracking autofocus for moving subjects"
+                  },
+                  "validationDeeplink": null
+                }
+              ]
+            },
+            {
+              "actionName": "Clean Camera Glass Lens",
+              "description": "It will remove optical smudge residues",
+              "category": "manual",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Inspect the exterior rear camera lenses for smudges, oils, or dust.",
+                    "Take a clean dry microfiber cloth.",
+                    "Gently wipe each camera lens in circular motions until clear."
+                  ],
+                  "actionableDeeplink": null,
+                  "validationDeeplink": null
+                }
+              ]
+            },
+            {
+              "actionName": "Reset Camera App Settings",
+              "description": "It will restore default camera configurations",
+              "category": "critical",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Open Camera app and tap the Settings gear icon.",
+                    "Scroll all the way down to the bottom of the menu.",
+                    "Tap Reset settings.",
+                    "Tap Reset to confirm returning camera options to default."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.sec.android.app.camera/reset_settings",
+                    "description": "Open camera settings reset dialog",
+                    "message": "reset camera settings back to defaults"
+                  },
+                  "validationDeeplink": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "latency_ms": 165,
+      "cache_hit": true,
+      "model": "gemini-3.8-flash",
+      "cost_usd": 0.0
+    }
+  },
+  {
+    "id": "sample_phone_slow_update",
+    "query": "My phone got slow after the update",
+    "query_variations": [
+      "After installing the latest software update, my Galaxy phone has become noticeably sluggish and slow.",
+      "Why is my Samsung phone lagging so much right after the recent system update?",
+      "phone slow after software update",
+      "Ever since updating my phone yesterday, opening apps takes forever and navigation stutters.",
+      "System performance degradation observed immediately subsequent to firmware update installation.",
+      "My phone is running super slow after updating One UI, it's so frustrating!",
+      "galaxy phone lagging stuttering slow post update",
+      "My phne got so sloow after updte pls help",
+      "Sluggish UI response and heavy app stutter following system upgrade.",
+      "How do I speed up my Samsung Galaxy that became slow after the latest update?"
+    ],
+    "response": {
+      "contexts": [
+        {
+          "goal": "Follow these steps to perform this Phone Performance Lag Troubleshooting",
+          "title": "Phone performance lag",
+          "score": 0.95,
+          "actions": [
+            {
+              "actionName": "Clean Device RAM Memory",
+              "description": "It will free device RAM memory space",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap on Battery and device care.",
+                    "Tap on Memory.",
+                    "Tap Clean now to clear background cached app memory.",
+                    "Optionally tap RAM Plus to increase virtual RAM allocation."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.samsung.android.lool/memory_management",
+                    "description": "Open memory cleanup and RAM Plus screen",
+                    "message": "clean memory and manage RAM Plus allocation"
+                  },
+                  "validationDeeplink": null
+                }
+              ]
+            },
+            {
+              "actionName": "Enable Automatic System Optimization",
+              "description": "It will maintain smooth system operations",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap Battery and device care.",
+                    "Tap Auto optimization.",
+                    "Toggle on Restart when needed to clear memory when the device is idle."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.samsung.android.lool/auto_optimization",
+                    "description": "Open auto optimization and restart schedule",
+                    "message": "enable auto optimization when needed"
+                  },
+                  "validationDeeplink": {
+                    "deeplink": "bixby://masked/act/com.samsung.android.lool/auto_optimization",
+                    "key": "auto_restart_when_needed",
+                    "resultType": "boolean",
+                    "condition": "equal",
+                    "value": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "actionName": "Restart Galaxy Device Cleanly",
+              "description": "It will reload fresh operating system caches",
+              "category": "critical",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Swipe down from the top of the screen with two fingers.",
+                    "Tap the Power icon on the top right.",
+                    "Tap Restart and confirm restart.",
+                    "Allow the smartphone to finish loading all system processes."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/device_restart",
+                    "description": "Open power restart device confirmation dialog",
+                    "message": "initiate clean system device reboot"
+                  },
+                  "validationDeeplink": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "latency_ms": 172,
+      "cache_hit": true,
+      "model": "gemini-3.8-flash",
+      "cost_usd": 0.0
+    }
+  },
+  {
+    "id": "sample_touch_screen_protector",
+    "query": "Touch screen is unresponsive and misses taps after putting on a glass screen protector",
+    "query_variations": [
+      "Since applying a tempered glass protector, my touch screen frequently misses taps and gestures.",
+      "Why is my screen not responding properly to my finger touches after adding a screen guard?",
+      "touch sensitivity screen protector unresponsive",
+      "I have to tap very hard on the screen now because my new screen protector made it unresponsive.",
+      "Attenuated capacitive touch responsiveness following installation of protective glass barrier.",
+      "My screen is barely registering my touches after putting this protector on, it's driving me crazy!",
+      "galaxy touch screen insensitive missed taps",
+      "Screen touch not workin well with protector",
+      "Reduced touch register accuracy and input lag with protective film applied.",
+      "How to make Galaxy touch screen more sensitive with tempered glass?"
+    ],
+    "response": {
+      "contexts": [
+        {
+          "goal": "Follow these steps to perform this Touch Screen Sensitivity Troubleshooting",
+          "title": "Touch sensitivity issues",
+          "score": 0.95,
+          "actions": [
+            {
+              "actionName": "Enable Touch Sensitivity Mode",
+              "description": "It will boost screen touch responsiveness",
+              "category": "auto",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Navigate to and open Settings.",
+                    "Tap on Display.",
+                    "Scroll down to find Touch sensitivity.",
+                    "Toggle on Touch sensitivity to increase responsiveness with screen protectors."
+                  ],
+                  "actionableDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/touch_sensitivity",
+                    "description": "Open touch sensitivity toggle screen",
+                    "message": "increase touch sensitivity for screen protectors"
+                  },
+                  "validationDeeplink": {
+                    "deeplink": "bixby://masked/act/com.android.settings/touch_sensitivity",
+                    "key": "touch_sensitivity_mode",
+                    "resultType": "boolean",
+                    "condition": "equal",
+                    "value": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "actionName": "Inspect Screen Protector Placement",
+              "description": "It will ensure smooth physical screen contact",
+              "category": "manual",
+              "stepGroups": [
+                {
+                  "steps": [
+                    "Check the edges of the glass protector for trapped dust or air bubbles.",
+                    "Ensure the protector is aligned accurately over the active display area.",
+                    "If responsiveness remains degraded, replace protector with Samsung certified accessory."
+                  ],
+                  "actionableDeeplink": null,
+                  "validationDeeplink": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "latency_ms": 155,
+      "cache_hit": true,
+      "model": "gemini-3.8-flash",
+      "cost_usd": 0.0
+    }
+  }
+]
