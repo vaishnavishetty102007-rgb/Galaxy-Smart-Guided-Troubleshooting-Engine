@@ -11,7 +11,7 @@ The engine is designed so that **AI proposes and code disposes**: an LLM (Gemini
 ## Submission Materials
 - [Presentation (PDF)](Galaxy_Troubleshooting_Engine_PPT.pdf)
 - [Presentation (PPTX)](Galaxy_Troubleshooting_Engine_PPT.pptx)
-- [Demo Video](PASTE_VIDEO_LINK_HERE)
+- [Demo Video](https://drive.google.com/file/d/1cQ7lsK_88nMdVO-h9rBCnsIzTUynHLDw/view?usp=sharing)
 - [AI Disclosure](AI_disclosure.md)
 - [Website_Guide](Galaxy_Troubleshooting_Engine_Complete_Website_Guide.pdf)
 - [App_URL](https://galaxy-smart-guided-troubleshooting-engine.ai.studio)
