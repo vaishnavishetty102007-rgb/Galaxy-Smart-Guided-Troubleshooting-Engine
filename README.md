@@ -7,6 +7,8 @@ A full-stack TypeScript application (Express + React + Vite) built for the **Sam
 The engine is designed so that **AI proposes and code disposes**: an LLM (Gemini) may draft a plan, but deterministic code retrieves the deeplinks, strips any web URLs, enforces the output schema, and orders actions by risk. If no API key is configured, the whole pipeline still works offline.
 
 ---
+# App URL 
+https://galaxy-smart-guided-troubleshooting-engine.ai.studio
 ## Submission Materials
 - [Presentation (PDF)](Galaxy_Troubleshooting_Engine_PPT.pdf)
 - [Presentation (PPTX)](Galaxy_Troubleshooting_Engine_PPT.pptx)
